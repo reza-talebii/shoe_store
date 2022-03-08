@@ -28,3 +28,19 @@
   grid-column: 1/-1;
   text-align: center;
 }
+
+@media screen and (max-width: 725px) {
+  .form {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  .form > input {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .checkBox-section {
+    flex-wrap: wrap;
+  }
+}
