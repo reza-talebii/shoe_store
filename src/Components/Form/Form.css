@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.checkBox-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/-1;
+}
+
+.checkbox-control {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn-container {
+  grid-column: 1/-1;
+  text-align: center;
+}
