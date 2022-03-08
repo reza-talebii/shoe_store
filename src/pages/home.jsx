@@ -9,7 +9,9 @@ const Home = () => {
     <>
       <Navbar />
       <Search />
-      <CardSection></CardSection>
+      <CardSection>
+        <Card />
+      </CardSection>
     </>
   );
 };

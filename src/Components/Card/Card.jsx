@@ -1,9 +1,19 @@
+import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 import img from "../../assets/123.jpg";
 import classes from "./Card.module.css";
 
 const Card = (props) => {
   return (
     <section className={classes.card}>
+      <section className={classes["icons-overlay"]}>
+        <span className={classes["card-icon"]}>
+          <FaRegTrashAlt />
+        </span>
+        <span className={classes["card-icon"]}>
+          <FaPencilAlt />
+        </span>
+      </section>
+
       <div className={classes["card__info"]}>
         <p>کد :123</p>
         <p>نام :nike</p>
