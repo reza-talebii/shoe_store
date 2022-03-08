@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Products from "./pages/products";
 import AddProducts from "./pages/addProducts";
-import "./App.css";
 
 const App = () => {
   return (
