@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-nav {
+  font-size: 1.5rem;
+}
+
+.icon-add {
+  font-size: 2rem;
+}
