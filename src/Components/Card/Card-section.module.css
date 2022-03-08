@@ -8,3 +8,10 @@
 .cardSection section {
   justify-self: center;
 }
+
+@media screen and (max-width: 1050px) {
+  .cardSection {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
+}
