@@ -37,3 +37,19 @@ export const fetchDataShoes = () => {
     dispatch(shoesActions.replaceShoes(cartData));
   };
 };
+
+// remove shoe
+export const removeRequest = (ID) => {
+  return async () => {
+    const removeData = async () => {
+      const respond = await fetch(`http://localhost:8000/shoes/${ID}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    };
+
+    await removeData();
+  };
+};

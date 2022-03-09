@@ -1,5 +1,6 @@
 import { shoesActions } from "../../store/shoes-slice";
 import { useDispatch } from "react-redux";
+import { removeRequest } from "../../store/shoes-action";
 //Components
 import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 import img from "../../assets/123.jpg";
@@ -9,7 +10,8 @@ const Card = ({ shoe }) => {
   const dispatch = useDispatch();
 
   const removeShoeHandler = () => {
-    // dispatch(shoesActions.removeShoes(shoe.code));
+    dispatch(removeRequest(shoe.code));
+    dispatch(shoesActions.removeShoes(shoe.code));
   };
 
   return (

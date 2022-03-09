@@ -13,11 +13,14 @@ const shoesSlice = createSlice({
       const newShoes = action.payload;
 
       state.items.push({
-        code: newShoes.code,
-        name: newShoes.name,
-        price: newShoes.price,
-        place: newShoes.place,
-        sizes: newShoes.sizes,
+        shoe: {
+          name: newShoes.name,
+          code: newShoes.code,
+          price: newShoes.price,
+          place: newShoes.place,
+          sizes: newShoes.sizes,
+        },
+        id: newShoes.code,
       });
     },
     replaceShoes(state, action) {
@@ -25,7 +28,7 @@ const shoesSlice = createSlice({
     },
     removeShoes(state, action) {
       const newItems = state.items.filter(
-        (item) => item.code !== action.payload
+        (item) => item.shoe.code !== action.payload
       );
 
       state.items = newItems;
