@@ -14,5 +14,5 @@ const filterSlice = createSlice({
   },
 });
 
-export const shoesActions = filterSlice.actions;
-export const shoesReducer = filterSlice.reducer;
+export const filterActions = filterSlice.actions;
+export const filterReducer = filterSlice.reducer;
