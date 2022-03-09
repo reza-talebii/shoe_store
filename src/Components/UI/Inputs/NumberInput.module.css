@@ -1,0 +1,8 @@
+.numberInput {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import "./Form.css";
 import Input from "../UI/Inputs/Input";
 import Button from "../UI/Button/Button";
-import CheckBox from "../UI/Inputs/CheckBox";
+import CheckBox from "../UI/Inputs/NumberInput";
 
 const Form = () => {
   return (
@@ -15,47 +15,47 @@ const Form = () => {
 
         <section className="checkBox-section">
           <div className="checkbox-control">
-            <label>37</label>
+            <label>37 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>38</label>
+            <label>38 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>39</label>
+            <label>39 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>40</label>
+            <label>40 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>41</label>
+            <label>41 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>42</label>
+            <label>42 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>43</label>
+            <label>43 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>44</label>
+            <label>44 : </label>
             <CheckBox />
           </div>
 
           <div className="checkbox-control">
-            <label>45</label>
+            <label>45 : </label>
             <CheckBox />
           </div>
         </section>
