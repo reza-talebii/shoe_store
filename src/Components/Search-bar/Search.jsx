@@ -11,8 +11,8 @@ const Search = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const searchHandler = (e) => {
+    dispatch(filterActions.searchValue(e.target.value));
     setSearchValue(e.target.value);
-    dispatch(filterActions.searchValue(searchValue));
   };
 
   return (
