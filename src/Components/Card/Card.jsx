@@ -2,7 +2,8 @@ import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 import img from "../../assets/123.jpg";
 import classes from "./Card.module.css";
 
-const Card = (props) => {
+const Card = ({ shoe }) => {
+  console.log(shoe);
   return (
     <section className={classes.card}>
       <section className={classes["icons-overlay"]}>
@@ -15,10 +16,10 @@ const Card = (props) => {
       </section>
 
       <div className={classes["card__info"]}>
-        <p>کد :123</p>
-        <p>نام :nike</p>
-        <p>قیمت :123</p>
-        <p>جایگاه :قفسه 3</p>
+        <p>کد :{shoe.code}</p>
+        <p>نام :{shoe.name}</p>
+        <p>{shoe.price} قیمت:</p>
+        <p>جایگاه :{shoe.place} </p>
         <p>سایزها :39-34-40-50</p>
       </div>
       <div className={classes["card__img"]}>
