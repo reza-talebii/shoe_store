@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchDataShoes } from "./store/shoes-slice";
-import { useDispatch } from "react-redux";
+import { fetchDataShoes } from "./store/shoes-action";
+import { useDispatch, useSelector } from "react-redux";
 
 //component
 import Home from "./pages/home";
@@ -9,7 +9,9 @@ import AddProducts from "./pages/addProducts";
 // import Products from "./pages/products";
 
 const App = () => {
+  // const shoes = useSelector((state) => state.shoes.items);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchDataShoes());
   }, [dispatch]);

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sendRequest } from "../../store/shoes-slice";
+import { sendRequest } from "../../store/shoes-action";
+import { shoesActions } from "../../store/shoes-slice";
 import { useNavigate } from "react-router";
 //components
 import "./Form.css";
@@ -52,6 +53,7 @@ const Form = () => {
     // validate
     if (inputsValue) {
       dispatch(sendRequest(inputsValue));
+      dispatch(shoesActions.addShoes(inputsValue));
     }
     // clear inputs value
     [
