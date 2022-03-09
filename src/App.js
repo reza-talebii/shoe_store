@@ -9,9 +9,9 @@ import AddProducts from "./pages/addProducts";
 // import Products from "./pages/products";
 
 const App = () => {
-  // const shoes = useSelector((state) => state.shoes.items);
   const dispatch = useDispatch();
 
+  //get & update shoes list from sever
   useEffect(() => {
     dispatch(fetchDataShoes());
   }, [dispatch]);

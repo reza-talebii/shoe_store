@@ -2,15 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // import axios from ""
 
 const initialState = {
-  items: [
-    {
-      code: "",
-      name: "",
-      price: "",
-      place: "",
-      sizes: [],
-    },
-  ],
+  items: [],
 };
 
 const shoesSlice = createSlice({
