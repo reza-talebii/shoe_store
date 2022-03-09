@@ -31,7 +31,13 @@ const shoesSlice = createSlice({
     replaceShoes(state, action) {
       state.items = action.payload;
     },
-    removeShoes() {},
+    removeShoes(state, action) {
+      const newItems = state.items.filter(
+        (item) => item.code !== action.payload
+      );
+
+      state.items = newItems;
+    },
     editShoes() {},
     sellShoes() {},
   },
