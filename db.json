@@ -35,6 +35,24 @@
         "size45": 0
       },
       "id": 2
+    },
+    {
+      "name": "nike",
+      "code": "3",
+      "price": "200",
+      "place": "",
+      "sizes": {
+        "size37": "3",
+        "size38": "2",
+        "size39": "20",
+        "size40": "3",
+        "size41": "4",
+        "size42": 0,
+        "size43": 0,
+        "size44": 0,
+        "size45": 0
+      },
+      "id": 3
     }
   ]
 }

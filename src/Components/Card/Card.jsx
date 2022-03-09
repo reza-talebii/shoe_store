@@ -3,7 +3,6 @@ import img from "../../assets/123.jpg";
 import classes from "./Card.module.css";
 
 const Card = ({ shoe }) => {
-  console.log(shoe);
   return (
     <section className={classes.card}>
       <section className={classes["icons-overlay"]}>
