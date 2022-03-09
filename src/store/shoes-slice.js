@@ -33,7 +33,6 @@ const shoesSlice = createSlice({
 
       state.items = newItems;
     },
-    editShoes() {},
     sellShoes() {},
   },
 });

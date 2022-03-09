@@ -56,10 +56,14 @@ const Form = () => {
       },
     };
 
-    // validate
-    if (inputsValue) {
+    console.log(!!shoeEditState);
+    if (!!shoeEditState) {
       dispatch(shoesActions.removeShoes(shoeEditState.code));
       dispatch(removeRequest(shoeEditState.code));
+    }
+
+    // validate
+    if (inputsValue) {
       dispatch(sendRequest(inputsValue));
       dispatch(shoesActions.addShoes(inputsValue));
     }
