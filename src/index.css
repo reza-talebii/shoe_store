@@ -7,7 +7,7 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 0 2rem;
   direction: rtl;
   font-family: "Yekan", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
