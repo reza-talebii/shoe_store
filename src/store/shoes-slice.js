@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+const URL = "http://localhost:8000/shoes";
 
 const initialState = {
   code: "",
@@ -18,6 +19,22 @@ const shoesSlice = createSlice({
     sellShoes() {},
   },
 });
+
+export const sendRequest = (shoe) => {
+  return async () => {
+    const sendData = async () => {
+      const respond = await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(shoe),
+      });
+    };
+
+    await sendData();
+  };
+};
 
 export const shoesActions = shoesSlice.actions;
 export const shoesReducer = shoesSlice.reducer;
