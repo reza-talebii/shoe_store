@@ -8,8 +8,6 @@ const CardSections = () => {
   const shoes = useSelector((state) => state.shoes.items);
   let filterByCode = [];
 
-  console.log(shoes);
-
   shoes.filter((item) => {
     if (item.shoe.code === searchFilterValue) filterByCode.push(item.shoe);
   });

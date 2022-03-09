@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendRequest } from "../../store/shoes-action";
+import { removeRequest } from "../../store/shoes-action";
 import { shoesActions } from "../../store/shoes-slice";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 //components
 import "./Form.css";
 import Input from "../UI/Inputs/Input";
@@ -10,22 +11,27 @@ import Button from "../UI/Button/Button";
 import NumberInput from "../UI/Inputs/NumberInput";
 
 const Form = () => {
+  const locationState = useLocation();
   const navigate = useNavigate();
+
+  const shoeEditState = locationState.state || "";
+
   //state inputs
-  const [nameEntered, setNameEntered] = useState("");
-  const [codeEntered, setCodeEntered] = useState("");
-  const [priceEntered, setPriceEntered] = useState("");
-  const [placeEntered, setPlaceEntered] = useState("");
+  const [nameEntered, setNameEntered] = useState(shoeEditState.name);
+  const [codeEntered, setCodeEntered] = useState(shoeEditState.code);
+  const [priceEntered, setPriceEntered] = useState(shoeEditState.price);
+  const [placeEntered, setPlaceEntered] = useState(shoeEditState.place);
   //state size inputs
-  const [inpSize37, setInpSize37] = useState(0);
-  const [inpSize38, setInpSize38] = useState(0);
-  const [inpSize39, setInpSize39] = useState(0);
-  const [inpSize40, setInpSize40] = useState(0);
-  const [inpSize41, setInpSize41] = useState(0);
-  const [inpSize42, setInpSize42] = useState(0);
-  const [inpSize43, setInpSize43] = useState(0);
-  const [inpSize44, setInpSize44] = useState(0);
-  const [inpSize45, setInpSize45] = useState(0);
+  const sizesLocation = shoeEditState.sizes ?? 0;
+  const [inpSize37, setInpSize37] = useState(sizesLocation.size37 ?? 0);
+  const [inpSize38, setInpSize38] = useState(sizesLocation.size38 ?? 0);
+  const [inpSize39, setInpSize39] = useState(sizesLocation.size39 ?? 0);
+  const [inpSize40, setInpSize40] = useState(sizesLocation.size40 ?? 0);
+  const [inpSize41, setInpSize41] = useState(sizesLocation.size41 ?? 0);
+  const [inpSize42, setInpSize42] = useState(sizesLocation.size42 ?? 0);
+  const [inpSize43, setInpSize43] = useState(sizesLocation.size43 ?? 0);
+  const [inpSize44, setInpSize44] = useState(sizesLocation.size44 ?? 0);
+  const [inpSize45, setInpSize45] = useState(sizesLocation.size45 ?? 0);
 
   const dispatch = useDispatch();
 
@@ -52,6 +58,8 @@ const Form = () => {
 
     // validate
     if (inputsValue) {
+      dispatch(shoesActions.removeShoes(shoeEditState.code));
+      dispatch(removeRequest(shoeEditState.code));
       dispatch(sendRequest(inputsValue));
       dispatch(shoesActions.addShoes(inputsValue));
     }

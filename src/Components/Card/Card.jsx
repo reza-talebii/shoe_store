@@ -1,6 +1,7 @@
 import { shoesActions } from "../../store/shoes-slice";
 import { useDispatch } from "react-redux";
 import { removeRequest } from "../../store/shoes-action";
+import { useNavigate } from "react-router-dom";
 //Components
 import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 import img from "../../assets/123.jpg";
@@ -8,10 +9,15 @@ import classes from "./Card.module.css";
 
 const Card = ({ shoe }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const removeShoeHandler = () => {
     dispatch(removeRequest(shoe.code));
     dispatch(shoesActions.removeShoes(shoe.code));
+  };
+
+  const editShoeHandler = () => {
+    navigate("/add-product", { state: shoe });
   };
 
   return (
@@ -20,7 +26,7 @@ const Card = ({ shoe }) => {
         <span className={classes["card-icon"]} onClick={removeShoeHandler}>
           <FaRegTrashAlt />
         </span>
-        <span className={classes["card-icon"]}>
+        <span className={classes["card-icon"]} onClick={editShoeHandler}>
           <FaPencilAlt />
         </span>
       </section>

@@ -1,3 +1,24 @@
 {
-  "shoes": []
+  "shoes": [
+    {
+      "shoe": {
+        "name": "",
+        "code": "1",
+        "price": "",
+        "place": "",
+        "sizes": {
+          "size37": 0,
+          "size38": 0,
+          "size39": 0,
+          "size40": 0,
+          "size41": 0,
+          "size42": 0,
+          "size43": 0,
+          "size44": 0,
+          "size45": 0
+        }
+      },
+      "id": "1"
+    }
+  ]
 }
