@@ -10,7 +10,7 @@ export const sendRequest = (shoe) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(shoe),
+        body: JSON.stringify({ shoe, id: shoe.code }),
       });
     };
 
