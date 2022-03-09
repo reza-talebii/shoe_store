@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import axios from ""
 const URL = "http://localhost:8000/shoes";
 
 const initialState = {
@@ -20,6 +21,7 @@ const shoesSlice = createSlice({
   },
 });
 
+//send shoe in sever
 export const sendRequest = (shoe) => {
   return async () => {
     const sendData = async () => {
@@ -33,6 +35,25 @@ export const sendRequest = (shoe) => {
     };
 
     await sendData();
+  };
+};
+
+// get shoes from server
+export const fetchDataShoes = () => {
+  return async (dispatch) => {
+    const fetchData = async () => {
+      const response = await fetch(URL);
+
+      // if (!response.ok) {
+      //   throw new Error("Could not fetch cart data!");
+      // }
+
+      const data = await response.json();
+
+      return data;
+    };
+
+    const cartData = await fetchData();
   };
 };
 
