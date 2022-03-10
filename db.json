@@ -2,7 +2,7 @@
   "shoes": [
     {
       "shoe": {
-        "code": "5",
+        "code": "2",
         "sizes": {
           "size37": 0,
           "size38": 0,
@@ -15,26 +15,7 @@
           "size45": 0
         }
       },
-      "id": "5"
-    },
-    {
-      "shoe": {
-        "name": "23",
-        "code": "44",
-        "price": "24",
-        "sizes": {
-          "size37": 0,
-          "size38": 0,
-          "size39": 0,
-          "size40": "4",
-          "size41": 0,
-          "size42": 0,
-          "size43": 0,
-          "size44": 0,
-          "size45": 0
-        }
-      },
-      "id": "44"
+      "id": "2"
     }
   ]
 }

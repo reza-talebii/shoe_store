@@ -32,14 +32,47 @@ const Card = ({ shoe }) => {
       </section>
 
       <div className={classes["card__info"]}>
-        <p>کد :{shoe.code}</p>
-        <p>نام :{shoe.name}</p>
-        <p>قیمت : {shoe.price}</p>
-        <p>جایگاه :{shoe.place} </p>
-        <p>سایزها :39-34-40-50</p>
+        <p>
+          کد : <span>{shoe.code}</span>
+        </p>
+        <p>
+          نام : <span>{shoe.name}</span>
+        </p>
+        <p>
+          قیمت : <span>{shoe.price}</span>
+        </p>
+        <p>
+          جایگاه : <span>{shoe.place}</span>
+        </p>
       </div>
-      <div className={classes["card__img"]}>
-        <img src={img} alt="shoe" />
+      <div className={classes["card__sizes"]}>
+        <p>
+          37 : <span>1</span>
+        </p>
+        <p>
+          38 : <span>1</span>
+        </p>
+        <p>
+          39 : <span>1</span>
+        </p>
+        <p>
+          40 : <span>1</span>
+        </p>
+        <p>
+          41 : <span>1</span>
+        </p>
+        <p>
+          42 : <span>1</span>
+        </p>
+        <p>
+          43 : <span>1</span>
+        </p>
+        <p>
+          44 : <span>1</span>
+        </p>
+        <p>
+          45 : <span>1</span>
+        </p>
       </div>
     </section>
   );
