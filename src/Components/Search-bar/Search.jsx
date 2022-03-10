@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterActions } from "../../store/search-slice";
 //components
-import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
+// import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 import classes from "./Search.module.css";
 import Input from "../UI/Inputs/Input";
 
@@ -23,9 +23,9 @@ const Search = () => {
         value={searchValue}
         onChange={searchHandler}
       />
-      <div className={classes["voice-icon"]}>
+      {/* <div className={classes["voice-icon"]}>
         <FaMicrophoneSlash />
-      </div>
+      </div> */}
     </form>
   );
 };

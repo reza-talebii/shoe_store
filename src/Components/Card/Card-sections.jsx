@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Card-section.module.css";
 import Card from "./Card";
 import { useSelector } from "react-redux";

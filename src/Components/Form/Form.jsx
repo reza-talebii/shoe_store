@@ -56,16 +56,18 @@ const Form = () => {
       },
     };
 
+    if (+inputsValue.code < 1 || !isFinite(inputsValue.code)) {
+      alert("کد صحیح نمی باشد");
+      return;
+    }
+
     if (!!shoeEditState) {
       dispatch(shoesActions.removeShoes(shoeEditState.code));
       dispatch(removeRequest(shoeEditState.code));
     }
 
-    // validate
-    if (inputsValue) {
-      dispatch(sendRequest(inputsValue));
-      dispatch(shoesActions.addShoes(inputsValue));
-    }
+    dispatch(sendRequest(inputsValue));
+    dispatch(shoesActions.addShoes(inputsValue));
     // clear inputs value
     [
       setNameEntered,
