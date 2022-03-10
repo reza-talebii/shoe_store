@@ -13,7 +13,11 @@
 
 .card span {
   font-size: 1.3rem;
-  color: rgb(61, 42, 105);
+  color: green;
+}
+
+.red-color {
+  color: red;
 }
 
 .card p {

@@ -4,8 +4,11 @@ import { removeRequest } from "../../store/shoes-action";
 import { useNavigate } from "react-router-dom";
 //Components
 import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
-import img from "../../assets/123.jpg";
 import classes from "./Card.module.css";
+
+function formatToCurrency(amount) {
+  return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+}
 
 const Card = ({ shoe }) => {
   const dispatch = useDispatch();
@@ -39,7 +42,7 @@ const Card = ({ shoe }) => {
           نام : <span>{shoe.name}</span>
         </p>
         <p>
-          قیمت : <span>{shoe.price}</span>
+          قیمت : <span>{shoe.price}</span> تومان
         </p>
         <p>
           جایگاه : <span>{shoe.place}</span>
@@ -47,31 +50,31 @@ const Card = ({ shoe }) => {
       </div>
       <div className={classes["card__sizes"]}>
         <p>
-          37 : <span>1</span>
+          37 : <span>{shoe.sizes.size37}</span>
         </p>
         <p>
-          38 : <span>1</span>
+          38 : <span>{shoe.sizes.size38}</span>
         </p>
         <p>
-          39 : <span>1</span>
+          39 : <span>{shoe.sizes.size39}</span>
         </p>
         <p>
-          40 : <span>1</span>
+          40 : <span>{shoe.sizes.size40}</span>
         </p>
         <p>
-          41 : <span>1</span>
+          41 : <span>{shoe.sizes.size41}</span>
         </p>
         <p>
-          42 : <span>1</span>
+          42 : <span>{shoe.sizes.size42}</span>
         </p>
         <p>
-          43 : <span>1</span>
+          43 : <span>{shoe.sizes.size43}</span>
         </p>
         <p>
-          44 : <span>1</span>
+          44 : <span>{shoe.sizes.size44}</span>
         </p>
         <p>
-          45 : <span>1</span>
+          45 : <span>{shoe.sizes.size45}</span>
         </p>
       </div>
     </section>
