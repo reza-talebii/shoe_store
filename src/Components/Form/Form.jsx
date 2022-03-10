@@ -56,7 +56,6 @@ const Form = () => {
       },
     };
 
-    console.log(!!shoeEditState);
     if (!!shoeEditState) {
       dispatch(shoesActions.removeShoes(shoeEditState.code));
       dispatch(removeRequest(shoeEditState.code));
