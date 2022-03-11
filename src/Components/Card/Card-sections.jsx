@@ -9,6 +9,8 @@ const CardSections = () => {
 
   let filterByCode = [];
 
+  console.log(shoes);
+
   shoes.filter((item) => {
     if (item.items.code === searchFilterValue) filterByCode.push(item);
   });

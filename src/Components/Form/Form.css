@@ -11,6 +11,11 @@
   gap: 3rem;
 }
 
+input {
+  /* font-family: initial; */
+  font-size: 1rem;
+}
+
 .checkBox-section {
   display: flex;
   justify-content: center;

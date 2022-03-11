@@ -4,23 +4,29 @@ import { fetchDataShoes, sendRequest } from "../../store/shoes-action";
 import { removeRequest } from "../../store/shoes-action";
 import { shoesActions } from "../../store/shoes-slice";
 import { useNavigate, useLocation } from "react-router";
+
 //components
 import "./Form.css";
 import Input from "../UI/Inputs/Input";
 import Button from "../UI/Button/Button";
 import NumberInput from "../UI/Inputs/NumberInput";
 
+function formatNumber(n) {
+  return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const Form = () => {
   const locationState = useLocation();
   const navigate = useNavigate();
 
-  const shoeEditState = locationState.state || "";
+  const shoeEditState = locationState.state || false;
 
   //state inputs
-  const [nameEntered, setNameEntered] = useState(shoeEditState.name);
-  const [codeEntered, setCodeEntered] = useState(shoeEditState.code);
-  const [priceEntered, setPriceEntered] = useState(shoeEditState.price);
-  const [placeEntered, setPlaceEntered] = useState(shoeEditState.place);
+
+  const [nameEntered, setNameEntered] = useState(shoeEditState.name || "");
+  const [codeEntered, setCodeEntered] = useState(shoeEditState.code || "");
+  const [priceEntered, setPriceEntered] = useState(shoeEditState.price || "");
+  const [placeEntered, setPlaceEntered] = useState(shoeEditState.place || "");
   //state size inputs
   const sizesLocation = shoeEditState.sizes ?? 0;
   const [inpSize37, setInpSize37] = useState(sizesLocation.size37 ?? 0);
@@ -62,13 +68,13 @@ const Form = () => {
     }
 
     if (!!shoeEditState) {
-      dispatch(shoesActions.removeShoes(shoeEditState.code));
       dispatch(removeRequest(shoeEditState.code));
+      dispatch(shoesActions.removeShoes(shoeEditState.code));
     }
 
     dispatch(sendRequest(inputsValue));
+    dispatch(fetchDataShoes());
     dispatch(shoesActions.addShoes(inputsValue));
-    // dispatch(fetchDataShoes());
 
     // clear inputs value
     const clearInputArr = [
@@ -111,7 +117,7 @@ const Form = () => {
           type="text"
           placeholder="قیمت"
           value={priceEntered}
-          onChange={(e) => setPriceEntered(e.target.value)}
+          onChange={(e) => setPriceEntered(formatNumber(e.target.value))}
         />
         <Input
           type="text"

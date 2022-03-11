@@ -2,18 +2,16 @@ import { shoesActions } from "../../store/shoes-slice";
 import { useDispatch } from "react-redux";
 import { removeRequest } from "../../store/shoes-action";
 import { useNavigate } from "react-router-dom";
+import usePriceFormatter from "../../hook/usePriceFormatter";
 //Components
 import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 import classes from "./Card.module.css";
-
-function formatToCurrency(amount) {
-  return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-}
 
 const Card = ({ shoe }) => {
   const shoeItems = shoe.items;
   const shoeID = shoe.id;
 
+  const formatter = usePriceFormatter();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,7 +43,7 @@ const Card = ({ shoe }) => {
           نام : <span>{shoeItems.name}</span>
         </p>
         <p>
-          قیمت : <span>{shoeItems.price}</span> تومان
+          قیمت : <span>{formatter.format(shoeItems.price)}</span> تومان
         </p>
         <p>
           جایگاه : <span>{shoeItems.place}</span>
