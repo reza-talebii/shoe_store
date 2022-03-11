@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sendRequest } from "../../store/shoes-action";
+import { fetchDataShoes, sendRequest } from "../../store/shoes-action";
 import { removeRequest } from "../../store/shoes-action";
 import { shoesActions } from "../../store/shoes-slice";
 import { useNavigate, useLocation } from "react-router";
@@ -68,8 +68,10 @@ const Form = () => {
 
     dispatch(sendRequest(inputsValue));
     dispatch(shoesActions.addShoes(inputsValue));
+    // dispatch(fetchDataShoes());
+
     // clear inputs value
-    [
+    const clearInputArr = [
       setNameEntered,
       setCodeEntered,
       setPriceEntered,
@@ -83,7 +85,9 @@ const Form = () => {
       setInpSize43,
       setInpSize44,
       setInpSize45,
-    ].map((item) => item(""));
+    ];
+
+    clearInputArr.map((item) => item(""));
 
     navigate("/");
   };

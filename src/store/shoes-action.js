@@ -10,7 +10,6 @@ export const sendRequest = (shoe) => {
         .from("shoes")
         .insert([
           {
-            codeID: shoe.code,
             items: shoe,
           },
         ])
@@ -37,12 +36,10 @@ export const fetchDataShoes = () => {
 export const removeRequest = (ID) => {
   return async () => {
     const removeData = async () => {
-      const respond = await fetch(`http://localhost:8000/shoes/${ID}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const { data, error } = await supabase
+        .from("shoes")
+        .delete()
+        .match({ id: ID });
     };
 
     await removeData();

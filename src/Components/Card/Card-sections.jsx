@@ -10,13 +10,13 @@ const CardSections = () => {
   let filterByCode = [];
 
   shoes.filter((item) => {
-    if (item.items.code === searchFilterValue) filterByCode.push(item.items);
+    if (item.items.code === searchFilterValue) filterByCode.push(item);
   });
 
   return (
     <section className={classes.cardSection}>
       {filterByCode.map((shoe) => (
-        <Card shoe={shoe} key={shoe.code} />
+        <Card shoe={shoe} key={shoe.items.code} />
       ))}
     </section>
   );

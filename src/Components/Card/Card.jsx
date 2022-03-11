@@ -11,12 +11,15 @@ function formatToCurrency(amount) {
 }
 
 const Card = ({ shoe }) => {
+  const shoeItems = shoe.items;
+  const shoeID = shoe.id;
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const removeShoeHandler = () => {
-    dispatch(removeRequest(shoe.code));
-    dispatch(shoesActions.removeShoes(shoe.code));
+    dispatch(removeRequest(shoeID));
+    dispatch(shoesActions.removeShoes(shoeID));
   };
 
   const editShoeHandler = () => {
@@ -36,45 +39,45 @@ const Card = ({ shoe }) => {
 
       <div className={classes["card__info"]}>
         <p>
-          کد : <span>{shoe.code}</span>
+          کد : <span>{shoeItems.code}</span>
         </p>
         <p>
-          نام : <span>{shoe.name}</span>
+          نام : <span>{shoeItems.name}</span>
         </p>
         <p>
-          قیمت : <span>{shoe.price}</span> تومان
+          قیمت : <span>{shoeItems.price}</span> تومان
         </p>
         <p>
-          جایگاه : <span>{shoe.place}</span>
+          جایگاه : <span>{shoeItems.place}</span>
         </p>
       </div>
       <div className={classes["card__sizes"]}>
         <p>
-          37 : <span>{shoe.sizes.size37}</span>
+          37 : <span>{shoeItems.sizes.size37}</span>
         </p>
         <p>
-          38 : <span>{shoe.sizes.size38}</span>
+          38 : <span>{shoeItems.sizes.size38}</span>
         </p>
         <p>
-          39 : <span>{shoe.sizes.size39}</span>
+          39 : <span>{shoeItems.sizes.size39}</span>
         </p>
         <p>
-          40 : <span>{shoe.sizes.size40}</span>
+          40 : <span>{shoeItems.sizes.size40}</span>
         </p>
         <p>
-          41 : <span>{shoe.sizes.size41}</span>
+          41 : <span>{shoeItems.sizes.size41}</span>
         </p>
         <p>
-          42 : <span>{shoe.sizes.size42}</span>
+          42 : <span>{shoeItems.sizes.size42}</span>
         </p>
         <p>
-          43 : <span>{shoe.sizes.size43}</span>
+          43 : <span>{shoeItems.sizes.size43}</span>
         </p>
         <p>
-          44 : <span>{shoe.sizes.size44}</span>
+          44 : <span>{shoeItems.sizes.size44}</span>
         </p>
         <p>
-          45 : <span>{shoe.sizes.size45}</span>
+          45 : <span>{shoeItems.sizes.size45}</span>
         </p>
       </div>
     </section>

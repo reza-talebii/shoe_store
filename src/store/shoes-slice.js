@@ -13,28 +13,23 @@ const shoesSlice = createSlice({
       const newShoes = action.payload;
 
       state.items.push({
-        shoe: {
+        items: {
           name: newShoes.name,
           code: newShoes.code,
           price: newShoes.price,
           place: newShoes.place,
           sizes: newShoes.sizes,
         },
-        id: newShoes.code,
       });
     },
     replaceShoes(state, action) {
-      // console.log(action.payload);
       state.items = action.payload;
     },
     removeShoes(state, action) {
-      const newItems = state.items.filter(
-        (item) => item.shoe.code !== action.payload
-      );
+      const newItems = state.items.filter((item) => item.id !== action.payload);
 
       state.items = newItems;
     },
-    sellShoes() {},
   },
 });
 
