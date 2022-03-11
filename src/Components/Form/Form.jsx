@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchDataShoes, sendRequest } from "../../store/shoes-action";
 import { removeRequest } from "../../store/shoes-action";
 import { shoesActions } from "../../store/shoes-slice";
@@ -18,6 +18,7 @@ function formatNumber(n) {
 const Form = () => {
   const locationState = useLocation();
   const navigate = useNavigate();
+  const shoesItem = useSelector((state) => state.shoes.items);
 
   const shoeEditState = locationState.state || false;
 
@@ -64,6 +65,16 @@ const Form = () => {
 
     if (+inputsValue.code < 1 || !isFinite(inputsValue.code)) {
       alert("کد صحیح نمی باشد");
+      return;
+    }
+
+    //validate code
+    const validateRepeatCode = shoesItem.some(
+      (shoe) => shoe.items.code === inputsValue.code
+    );
+
+    if (validateRepeatCode) {
+      alert("کد تکراری وارد کردی !");
       return;
     }
 
