@@ -20,7 +20,9 @@ const Form = () => {
   const navigate = useNavigate();
   const shoesItem = useSelector((state) => state.shoes.items);
 
-  const shoeEditState = locationState.state || false;
+  const shoeEditStateNav = locationState.state || false;
+  const shoeEditState = shoeEditStateNav.items || false;
+  const shoeID = shoeEditStateNav.id || false;
 
   //state inputs
 
@@ -73,19 +75,25 @@ const Form = () => {
       (shoe) => shoe.items.code === inputsValue.code
     );
 
-    if (validateRepeatCode) {
-      alert("کد تکراری وارد کردی !");
-      return;
+    if (!shoeEditStateNav) {
+      if (validateRepeatCode) {
+        alert("کد تکراری وارد کردی !");
+        return;
+      }
     }
 
-    if (!!shoeEditState) {
-      dispatch(removeRequest(shoeEditState.code));
-      dispatch(shoesActions.removeShoes(shoeEditState.code));
+    if (shoeEditStateNav) {
+      dispatch(removeRequest(shoeID));
+      dispatch(shoesActions.removeShoes(shoeID));
     }
 
-    dispatch(sendRequest(inputsValue));
-    dispatch(fetchDataShoes());
-    dispatch(shoesActions.addShoes(inputsValue));
+    // dispatch(shoesActions.addShoes(inputsValue));
+    const sendDataRequest = async () => {
+      await dispatch(sendRequest(inputsValue));
+      dispatch(fetchDataShoes());
+    };
+
+    sendDataRequest();
 
     // clear inputs value
     const clearInputArr = [
