@@ -24,6 +24,7 @@ const shoesSlice = createSlice({
       });
     },
     replaceShoes(state, action) {
+      // console.log(action.payload);
       state.items = action.payload;
     },
     removeShoes(state, action) {

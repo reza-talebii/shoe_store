@@ -6,10 +6,11 @@ import { useSelector } from "react-redux";
 const CardSections = () => {
   const searchFilterValue = useSelector((state) => state.filter.searchFilter);
   const shoes = useSelector((state) => state.shoes.items);
+
   let filterByCode = [];
 
   shoes.filter((item) => {
-    if (item.shoe.code === searchFilterValue) filterByCode.push(item.shoe);
+    if (item.items.code === searchFilterValue) filterByCode.push(item.items);
   });
 
   return (
