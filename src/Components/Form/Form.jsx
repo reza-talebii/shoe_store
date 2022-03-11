@@ -15,6 +15,8 @@ function formatNumber(n) {
   return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+const p2e = (s) => s.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+
 const Form = () => {
   const locationState = useLocation();
   const navigate = useNavigate();
@@ -64,6 +66,8 @@ const Form = () => {
         size45: inpSize45,
       },
     };
+
+    console.log(inputsValue);
 
     if (+inputsValue.code < 1 || !isFinite(inputsValue.code)) {
       alert("کد صحیح نمی باشد");

@@ -10,6 +10,7 @@
   margin-left: 1rem;
   font-family: inherit;
   text-align: right;
+  color: #fff;
 }
 
 .input::placeholder {
