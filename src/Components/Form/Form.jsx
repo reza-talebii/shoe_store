@@ -67,8 +67,6 @@ const Form = () => {
       },
     };
 
-    console.log(inputsValue);
-
     if (+inputsValue.code < 1 || !isFinite(inputsValue.code)) {
       alert("کد صحیح نمی باشد");
       return;
@@ -121,6 +119,11 @@ const Form = () => {
     navigate("/");
   };
 
+  const addSizeHandler = (setValue) => setValue((prev) => prev + 1);
+
+  const minesSizeHandler = (setValue) =>
+    setValue((prev) => (prev > 0 ? prev - 1 : prev));
+
   return (
     <div className="container">
       <form className="form" onSubmit={addShoeHandler}>
@@ -156,13 +159,54 @@ const Form = () => {
               value={inpSize37}
               onChange={(e) => setInpSize37(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize37);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize37);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
+
           <div className="checkbox-control">
             <label>38 : </label>
             <NumberInput
               value={inpSize38}
               onChange={(e) => setInpSize38(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize38);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize38);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -171,6 +215,26 @@ const Form = () => {
               value={inpSize39}
               onChange={(e) => setInpSize39(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize39);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize39);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -179,6 +243,26 @@ const Form = () => {
               value={inpSize40}
               onChange={(e) => setInpSize40(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize40);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize40);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -187,6 +271,26 @@ const Form = () => {
               value={inpSize41}
               onChange={(e) => setInpSize41(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize41);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize41);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -195,6 +299,26 @@ const Form = () => {
               value={inpSize42}
               onChange={(e) => setInpSize42(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize42);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize42);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -203,6 +327,26 @@ const Form = () => {
               value={inpSize43}
               onChange={(e) => setInpSize43(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize43);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize43);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -211,6 +355,26 @@ const Form = () => {
               value={inpSize44}
               onChange={(e) => setInpSize44(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize44);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize44);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
 
           <div className="checkbox-control">
@@ -219,6 +383,26 @@ const Form = () => {
               value={inpSize45}
               onChange={(e) => setInpSize45(e.target.value)}
             />
+            <div className="addMinesSize">
+              <button
+                className="addSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addSizeHandler(setInpSize45);
+                }}
+              >
+                +
+              </button>
+              <button
+                className="minesSize"
+                onClick={(e) => {
+                  e.preventDefault();
+                  minesSizeHandler(setInpSize45);
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
         </section>
 

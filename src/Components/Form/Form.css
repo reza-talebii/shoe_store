@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 5rem;
 }
 
 .form {
@@ -34,6 +34,20 @@
   text-align: center;
 }
 
+.addMinesSize {
+  display: none;
+  flex-direction: column;
+  width: 40px;
+}
+
+.addMinesSize button {
+  height: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 725px) {
   .form {
     grid-template-columns: repeat(1, 1fr);
@@ -42,10 +56,17 @@
   .form > input {
     margin: 0 auto;
   }
+
+  .addMinesSize {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 450px) {
   .checkBox-section {
     flex-wrap: wrap;
+  }
+  .container {
+    margin-top: 2rem;
   }
 }
