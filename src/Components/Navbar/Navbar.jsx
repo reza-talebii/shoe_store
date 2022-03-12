@@ -1,4 +1,4 @@
-import { FaBars } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/shoes-logo.png";
 import classes from "./Navbar.module.css";

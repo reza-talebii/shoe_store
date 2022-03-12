@@ -1,12 +1,13 @@
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchDataShoes } from "./store/shoes-action";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 //component
-import Home from "./pages/home";
-import AddProducts from "./pages/addProducts";
-// import Products from "./pages/products";
+import LoadingSpinner from "./Components/UI/Loading/LoadingSpinner";
+const Home = React.lazy(() => import("./pages/home"));
+const AddProducts = React.lazy(() => import("./pages/addProducts"));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -17,11 +18,12 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path={"/*"} element={<Home />} />
-      <Route path={"/add-product"} element={<AddProducts />} />
-      {/* <Route path={"/products"} element={<Products />} /> */}
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path={"/*"} element={<Home />} />
+        <Route path={"/add-product"} element={<AddProducts />} />
+      </Routes>
+    </Suspense>
   );
 };
 
